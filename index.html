@@ -30,7 +30,7 @@
 
             //https://www.reddit.com/r/Floppa/
             function get(){
-                $.get("https://www.reddit.com/r/Floppa/random.json", function(data, status){
+                $.get("https://www.reddit.com/r/bigfloppa/random.json", function(data, status){
                     if(data[0].data.children[0].data.thumbnail != "self"){
                         if(data[0].data.children[0].data.url.startsWith("https://i.redd.it") || data[0].data.children[0].data.url.startsWith("https://i.imgur.com")){
                             var post = data[0].data.children[0].data
