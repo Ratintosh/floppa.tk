@@ -24,6 +24,9 @@
             <img class="center" width="500px" height="500px" id="thumb">
         </div>
         <script>
+	    function loaded() {
+	    	alert("loaded (test)")
+	    }
             function randomIntFromInterval(min, max) { // min and max included 
                 return Math.floor(Math.random() * (max - min + 1) + min)
             }
@@ -34,6 +37,7 @@
                     if(data[0].data.children[0].data.thumbnail != "self"){
                         if(data[0].data.children[0].data.url.startsWith("https://i.redd.it") || data[0].data.children[0].data.url.startsWith("https://i.imgur.com")){
                             var post = data[0].data.children[0].data
+			    img.addEventListener('load', loaded)
 			    document.getElementById("thumb").style.filter = "invert(0)" //restore the image back to its normal colors
                             document.getElementById("thumb").src = post.url
                             document.getElementById("thumb").width = "500"
