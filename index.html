@@ -27,13 +27,14 @@
             function randomIntFromInterval(min, max) { // min and max included 
                 return Math.floor(Math.random() * (max - min + 1) + min)
             }
-
+	    document.getElementById("thumb").style.filter = "invert(1)" //invert the image
             //https://www.reddit.com/r/Floppa/
             function get(){
                 $.get("https://www.reddit.com/r/bigfloppa/random.json", function(data, status){
                     if(data[0].data.children[0].data.thumbnail != "self"){
                         if(data[0].data.children[0].data.url.startsWith("https://i.redd.it") || data[0].data.children[0].data.url.startsWith("https://i.imgur.com")){
                             var post = data[0].data.children[0].data
+			    document.getElementById("thumb").style.filter = "invert(0)" //restore the image back to its normal colors
                             document.getElementById("thumb").src = post.url
                             document.getElementById("thumb").width = "500"
                             document.getElementById("thumb").height = "500"
