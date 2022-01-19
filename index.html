@@ -25,7 +25,7 @@
         </div>
         <script>
 	    function loaded() {
-	    	alert("loaded (test)")
+	    	document.getElementById("thumb").style.filter = "invert(0)" //restore the image back to its normal colors
 	    }
             function randomIntFromInterval(min, max) { // min and max included 
                 return Math.floor(Math.random() * (max - min + 1) + min)
@@ -38,7 +38,6 @@
                         if(data[0].data.children[0].data.url.startsWith("https://i.redd.it") || data[0].data.children[0].data.url.startsWith("https://i.imgur.com")){
                             var post = data[0].data.children[0].data
 			    document.getElementById("thumb").addEventListener('load', loaded) //add event listener to wait for the new image to load
-			    document.getElementById("thumb").style.filter = "invert(0)" //restore the image back to its normal colors
                             document.getElementById("thumb").src = post.url
                             document.getElementById("thumb").width = "500"
                             document.getElementById("thumb").height = "500"
