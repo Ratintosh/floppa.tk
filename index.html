@@ -37,7 +37,7 @@
                     if(data[0].data.children[0].data.thumbnail != "self"){
                         if(data[0].data.children[0].data.url.startsWith("https://i.redd.it") || data[0].data.children[0].data.url.startsWith("https://i.imgur.com")){
                             var post = data[0].data.children[0].data
-			    img.addEventListener('load', loaded)
+			    document.getElementById("thumb").addEventListener('load', loaded) //add event listener to wait for the new image to load
 			    document.getElementById("thumb").style.filter = "invert(0)" //restore the image back to its normal colors
                             document.getElementById("thumb").src = post.url
                             document.getElementById("thumb").width = "500"
